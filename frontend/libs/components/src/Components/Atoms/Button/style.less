@@ -1,0 +1,39 @@
+.cbm-button {
+    &--secondary {
+        background: @secondary-1;
+        color: @white;
+        border-color: @secondary-1;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background: @secondary-color;
+            color: @white;
+            border-color: @secondary-color;
+        }
+    }
+
+    &--success {
+        background: @success-color;
+        color: @white;
+        border-color: @success-color;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background: @success-color;
+            color: @white;
+            border-color: @success-color;
+            opacity: 0.8;
+        }
+    }
+
+    &--clear {
+        border: none;
+        box-shadow: none;
+    }
+
+    &.ant-btn-ghost {
+        color: @white;
+    }
+}

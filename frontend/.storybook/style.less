@@ -1,0 +1,18 @@
+#root {
+    height: 100%;
+
+    div {
+        #story-root {
+            & + div {
+                padding: 0 20px 20px 20px !important;
+
+                div {
+                    margin: 0 !important;
+                    overflow: auto;
+                }
+            }
+        }
+    }
+}
+
+@import '../libs/components/src/index.less';

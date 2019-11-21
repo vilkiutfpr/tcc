@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo -- LS --
+      - ls
+      - rm -rf node_modules
+      - npm install
+      - npm uninstall -g prisma2
+      - npm i -g --unsafe-perm prisma2
+  build:
+    commands:
+      - npm install
+      - ls
+      - npm run photon:generate
+      - npm run build
+  post_build:
+    commands:
+      - npm install
+      - ls
+      - npm run photon:generate
+      - npm run build
+artifacts:
+  files:
+    - "**/*"

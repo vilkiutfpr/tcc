@@ -1,0 +1,31 @@
+FrontEnd 
+    ☐ GenericNotFound
+    ✔ Loading in list items @done(19-10-23 09:30)
+    ☐ No data in list (change icon)
+    ☐ Create splash screen
+    ☐ Sign in
+        ☐ Loading
+    ☐ Appointment Screen
+        ☐ BC
+        ☐ BM
+        ☐ ADM
+
+BackEnd
+    ✔ Configure ORM @done(19-10-04 14:40)
+    ✔ Configure .envs @done(19-10-19 13:57)
+    ✘ Configure baseUrl @cancelled(19-10-07 18:43)
+    ☐ Create core schemas
+        ✔ Notification @done(19-10-15 21:09)
+            ☐ Pagination
+        ✔ Task @done(19-10-15 21:08)
+            ☐ Pagination
+        ☐ Schedule BM
+        ✔ Schedule BC @done(19-10-19 13:57)
+    ✔ Index.ts to export content from module @done(19-10-11 15:59) @lasted(1m2s)
+    ☐ Create auth flow
+        ✔ Users @done(19-10-07 18:43)
+        ✔ Roles @done(19-10-07 18:43)
+        ✔ Guards @done(19-10-07 18:43)
+        ☐ Login with validation from app
+    ✔ Create ADM schemas @done(19-10-19 13:57)
+    ✔ Upload files @done(19-10-19 13:57)

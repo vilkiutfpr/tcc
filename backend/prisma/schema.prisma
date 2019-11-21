@@ -1,0 +1,82 @@
+datasource db {
+  provider = "postgresql"
+  url      = "urldatabaseconnect"
+}
+
+generator photon {
+  provider = "photonjs"
+}
+
+model User {
+  id               String        @default(cuid()) @id @unique
+  email            String        @unique
+  password         String
+  name             String
+  role             Role
+  fireStation      FireStation
+  responsibleTasks Task[]        @relation(name: "AssignedToUser")
+  createdTasks     Task[]        @relation(name: "AssignedByUser")
+  seenNotices      Notice[]      @relation(name: "UsersSeenNotice")
+  createdNotices   Notice[]      @relation(name: "UserCreateNotice")
+  appointments     Appointment[]
+  assignedNotices  Notice[]      @relation(name: "UserAssignedNotices")
+}
+
+model FireStation {
+  id    String @default(cuid()) @id @unique
+  name  String
+  users User[]
+}
+
+model Task {
+  id          String     @default(cuid()) @id @unique
+  title       String
+  description String
+  assignedTo  User       @relation(name: "AssignedToUser")
+  assignedBy  User       @relation(name: "AssignedByUser")
+  document    String?
+  priority    Priority
+  categories  Category[]
+  address     String
+  date        DateTime
+  done        Boolean
+}
+
+model Notice {
+  id          String     @default(cuid()) @id @unique
+  title       String
+  description String
+  seenBy      User[]     @relation(name: "UsersSeenNotice")
+  createdBy   User       @relation(name: "UserCreateNotice")
+  priority    Priority
+  categories  Category[]
+  assignedTo  User[]     @relation(name: "UserAssignedNotices")
+}
+
+model Category {
+  id      String   @default(cuid()) @id @unique
+  name    String
+  tasks   Task[]
+  notices Notice[]
+}
+
+
+model Appointment {
+  id     String   @default(cuid()) @id @unique
+  start  DateTime
+  end    DateTime
+  user   User
+  billed Boolean? @default(false)
+}
+
+enum Priority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum Role {
+  BC
+  BM
+  ADM
+}

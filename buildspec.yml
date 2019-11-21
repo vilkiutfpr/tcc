@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - cd backend/
+      - npm install
+      - npm i -g prisma2
+  build:
+    commands:
+      - npm install
+      - echo ------ BUILD ------
+      - ls
+      - npm run photon:dev
+      - npm run build
+  post_build:
+    commands:
+      - echo ------ POST BUILD ------
+      # - cd backend/
+      - npm install
+      - echo ------ POST BUILD LS ------
+      - ls
+      - npm run photon:dev
+      - npm run build
+artifacts:
+  files:
+    - "backend/*"

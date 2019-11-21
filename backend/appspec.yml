@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/cbmsc/
+hooks:
+  ApplicationStart:
+    - location: scripts/start-server.sh
+      timeout: 60
+  ApplicationStop:
+    - location: scripts/stop-server.sh
+      timeout: 60

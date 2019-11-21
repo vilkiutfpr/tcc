@@ -1,0 +1,122 @@
+.cbm-main-menu {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    background: @primary-color;
+    padding: 0 @padding-sm;
+    box-shadow: @main-menu-tab-shadow;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .cbm-button {
+        font-size: 24px;
+    }
+
+    &__content {
+        .ant-drawer-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: @padding-xxl 0 0;
+            height: 100%;
+        }
+
+        .ant-drawer-content {
+            border-radius: @border-radius-base * 4 @border-radius-base * 4 0 0;
+
+            @media (min-width: @screen-lg) {
+                border-radius: 0;
+            }
+        }
+
+        &--brand {
+            max-width: 150px;
+            margin: @margin-md 0;
+            display: none;
+        }
+
+        &--close {
+            box-shadow: @box-shadow-base;
+            width: 52px;
+            height: 52px;
+            background: @white;
+            padding: @padding-xs;
+            border-radius: 100%;
+            position: absolute;
+            top: -20px;
+            left: ~"calc(50% - 26px)";
+            color: @danger-color;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        &__nav-item {
+            width: 100%;
+        }
+
+        .cbm-list {
+            box-shadow: none;
+            width: 100%;
+
+            .item-active {
+                background: @grey-5;
+                box-shadow: inset 5px 0px 0px 0px @primary-color;
+            }
+
+            &--item {
+                cursor: pointer;
+                border: none;
+                padding: 0 !important;
+
+                > div {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+
+                    a {
+                        color: @black-5;
+                        width: 100%;
+                        height: 100%;
+                        padding: @padding-sm @padding-lg;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: @screen-lg) {
+        position: fixed;
+        left: 0;
+        bottom: auto;
+        top: 0;
+        right: 0;
+
+        .cbm-button:first-of-type {
+            display: none;
+        }
+
+        &__content {
+            .ant-drawer-body {
+                padding: 0;
+            }
+
+            &--brand {
+                display: block;
+            }
+
+            &--close {
+                right: -24px;
+                top: 24px;
+                left: auto;
+            }
+        }
+    }
+}

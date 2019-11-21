@@ -1,0 +1,90 @@
+.cbm-calendar {
+    position: relative;
+
+    &__toolbar {
+        &__actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cbm-select {
+            display: none;
+        }
+
+        @media (min-width: @screen-md) {
+            display: flex;
+            justify-content: space-between;
+
+            .cbm-select {
+                display: block;
+                width: 200px;
+            }
+        }
+    }
+
+    &__loading {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: @white;
+        z-index: 1;
+        opacity: 0.75;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: @secondary-color;
+    }
+
+    * {
+        outline: none !important;
+    }
+
+    &__component {
+        min-height: 75vh;
+        .rbc-current-time-indicator {
+            z-index: 1;
+        }
+
+        .rbc-toolbar {
+            button {
+                background: @white;
+                outline: none;
+            }
+
+            @media (max-width: @screen-sm) {
+                .rbc-toolbar-label {
+                    margin-top: @margin-md;
+                }
+            }
+        }
+
+        .rbc-event {
+            background: @primary-color;
+
+            &.rbc-selected {
+                background: @primary-4 !important;
+            }
+        }
+
+        .rbc-today {
+            background: @grey-6;
+        }
+
+        .rbc-time-header-content {
+            .rbc-row-bg {
+                border-radius: 0 @border-radius-base 0 0;
+            }
+        }
+
+        .rbc-time-view,
+        .rbc-month-view {
+            border-radius: @border-radius-base;
+            background: @white;
+            box-shadow: @box-shadow-base;
+            margin-top: @margin-md;
+        }
+    }
+}

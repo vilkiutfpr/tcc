@@ -1,0 +1,29 @@
+.sbc-appointments {
+    &__calendar {
+        margin-top: @margin-lg;
+    }
+
+    &__list {
+        &__header {
+            &--button {
+                margin-bottom: @margin-md;
+                width: 100%;
+            }
+
+            .cbm-date-picker {
+                max-width: 200px;
+            }
+
+            @media (min-width: @screen-md) {
+                display: flex;
+                align-items: center;
+
+                &--button {
+                    margin-bottom: 0;
+                    margin-right: @margin-md;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

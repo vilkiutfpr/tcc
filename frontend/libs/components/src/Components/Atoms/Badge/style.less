@@ -1,0 +1,49 @@
+.cbm-badge {
+	display: flex;
+	align-items: center;
+
+	&__dot {
+		font-size: @font-size-overline;
+		padding: 0 @padding-xs;
+		min-width: 15px;
+		text-align: center;
+		border-radius: 100px;
+		color: @white;
+		height: fit-content;
+		width: fit-content;
+		margin-right: @margin-xs;
+
+		&--rounded {
+			padding: 0 @padding-xxs;
+			border-radius: 100%;
+		}
+
+		.cbm-typography {
+			color: @white !important;
+		}
+
+		&--primary {
+			background: @primary-color;
+		}
+
+		&--secondary {
+			background: @secondary-color;
+		}
+
+		&--danger {
+			background: @danger-color;
+		}
+
+		&--success {
+			background: @success-color;
+		}
+
+		&--warning {
+			background: @warning-color;
+		}
+
+		&--default {
+			background: @grey-1;
+		}
+	}
+}

@@ -1,0 +1,98 @@
+.cbm-list {
+    .ant-list-empty-text {
+        h3 {
+            color: @grey-2 !important;
+        }
+    }
+
+    .ant-spin-nested-loading {
+        > div:not(.ant-spin-container),
+        > div:not(&.ant-spin-container) {
+            height: 200px;
+        }
+
+        > div > .ant-spin {
+            z-index: 1 !important;
+        }
+    }
+
+    &__no-data {
+        box-shadow: none !important;
+    }
+
+    &__loading {
+        height: 250px;
+        box-shadow: none !important;
+
+        &--item {
+            &:hover {
+                background: @white !important;
+                box-shadow: none !important;
+            }
+
+            .ant-skeleton-title {
+                margin-top: 0 !important;
+            }
+            .ant-skeleton-paragraph {
+                margin: 0 !important;
+            }
+        }
+
+        @media (min-width: @screen-lg) {
+            height: 200px;
+        }
+    }
+
+    &--item {
+        padding: @padding-sm;
+        cursor: pointer;
+        background: @white;
+
+        &:hover {
+            box-shadow: inset 0px -12px 20px -14px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: @screen-lg) {
+            &--as-cards {
+                margin: @margin-sm 0;
+                box-shadow: @list-item-shadow;
+            }
+
+            &--rounded {
+                border-radius: @border-radius-base !important;
+
+                &:first-of-type {
+                    border-radius: @border-radius-base @border-radius-base 0 0;
+                }
+
+                &:last-of-type {
+                    border-radius: 0 0 @border-radius-base @border-radius-base;
+                }
+            }
+        }
+
+        &-meta {
+            align-items: center;
+        }
+    }
+
+    @media (min-width: @screen-lg) {
+        box-shadow: @list-item-shadow;
+
+        border-radius: @border-radius-base;
+
+        &--item {
+            &:first-of-type {
+                border-radius: @border-radius-base @border-radius-base 0 0;
+            }
+
+            &:last-of-type {
+                border-radius: 0 0 @border-radius-base @border-radius-base;
+            }
+
+            &:only-of-type {
+                border-radius: @border-radius-base;
+            }
+        }
+    }
+}

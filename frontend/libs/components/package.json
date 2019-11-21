@@ -1,0 +1,15 @@
+{
+    "name": "@cbmsc/components",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "cross-env BABEL_ENV=build babel src -d dist --source-maps --delete-dir-on-start --config-file ./babel.config.js --no-comments --copy-files",
+        "start:dev": "yarn build -w",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Vinicius Lohmann Kieling",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {}
+}

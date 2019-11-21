@@ -1,0 +1,95 @@
+.cbm-sign-in-page {
+    background-color: @white;
+    position: relative;
+    height: 100%;
+
+    &--logo {
+        background-position: 50px 50px;
+        background-size: 350px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        width: 320px;
+        height: 300px;
+        opacity: 0.05;
+    }
+
+    &__container {
+        padding: @padding-sm;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        z-index: 2;
+
+        &--header {
+            color: @primary-color;
+            border-left: 5px solid @primary-color;
+            padding-left: @padding-md;
+            margin-bottom: @margin-xxl;
+        }
+
+        .cbm-form,
+        &--header {
+            width: 100%;
+            max-width: 350px;
+        }
+
+        &__buttons {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .cbm-button {
+                width: 75%;
+                margin: @margin-sm auto 0 auto;
+            }
+        }
+    }
+
+    @media (min-width: @screen-lg) {
+        &__infos {
+            height: 100%;
+            background: @primary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-left: @padding-xl;
+            color: @white;
+            position: relative;
+            box-shadow: @box-shadow-left;
+            z-index: 2;
+
+            div,
+            img {
+                z-index: 3;
+            }
+
+            div {
+                margin-top: @margin-lg;
+            }
+
+            img {
+                margin-top: @margin-xl;
+                max-width: 300px;
+            }
+
+            span {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                opacity: 0.1;
+                z-index: 2;
+            }
+        }
+    }
+}

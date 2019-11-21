@@ -1,0 +1,19 @@
+.cbm-crud {
+    &__actions {
+        > *:not(:last-child) {
+            margin-bottom: 14px;
+            width: 100%;
+        }
+
+        @media (min-width: @screen-sm) {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            > * {
+                margin-bottom: 0 !important;
+                width: auto !important;
+            }
+        }
+    }
+}

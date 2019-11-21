@@ -1,0 +1,32 @@
+.cbm-appointment-list-item {
+    > div {
+        display: flex;
+        align-items: center;
+    }
+
+    &--icon {
+        font-size: 18px;
+        margin-right: @margin-sm !important;
+
+        &--success {
+            color: @success-color;
+        }
+
+        &--danger {
+            color: @danger-color;
+        }
+    }
+
+    &--recursive {
+        color: @grey-2;
+    }
+
+    &--content {
+        &__start-at {
+            color: @success-color;
+        }
+        &__end-at {
+            color: @danger-color;
+        }
+    }
+}
