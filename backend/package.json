@@ -30,7 +30,7 @@
     "@nestjs/platform-express": "^6.0.0",
     "apollo-server-express": "^2.9.4",
     "aws-sdk": "^2.551.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "date-fns": "^2.5.0",
     "global": "^4.4.0",
     "graphql": "^14.5.8",
